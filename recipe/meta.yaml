@@ -23,6 +23,12 @@ build:
 # Suggests: knitr, rmarkdown, data.table, plm, MASS, pander
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-sandwich                 # [build_platform != target_platform]
+    - r-dreamerr                 # [build_platform != target_platform]
+    - r-nlme                     # [build_platform != target_platform]
+    - r-numderiv                 # [build_platform != target_platform]
+    - r-rcpp                     # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('cxx') }}            # [not win]
