@@ -15,7 +15,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,24 +23,21 @@ build:
 # Suggests: knitr, rmarkdown, data.table, plm, MASS, pander
 requirements:
   build:
-    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-sandwich                 # [build_platform != target_platform]
-    - r-dreamerr                 # [build_platform != target_platform]
-    - r-nlme                     # [build_platform != target_platform]
-    - r-numderiv                 # [build_platform != target_platform]
-    - r-rcpp                     # [build_platform != target_platform]
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-sandwich                   # [build_platform != target_platform]
+    - r-dreamerr                   # [build_platform != target_platform]
+    - r-nlme                       # [build_platform != target_platform]
+    - r-numderiv                   # [build_platform != target_platform]
+    - r-rcpp                       # [build_platform != target_platform]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - llvm-openmp                  # [osx]
-    - libgomp                      # [linux]    
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
 
   host:
     - r-base
@@ -49,6 +46,8 @@ requirements:
     - r-nlme
     - r-numderiv
     - r-sandwich
+    - llvm-openmp                  # [osx]
+    - libgomp                      # [linux]   
 
   run:
     - r-base
@@ -65,8 +64,8 @@ test:
     - "\"%R%\" -e \"library('fixest')\""  # [win]
 
 about:
-  home: https://lrberge.github.io/fixest/, https://github.com/lrberge/fixest
-
+  home: https://lrberge.github.io/fixest/
+  dev_url: https://github.com/lrberge/fixest
   license: GPL-3.0-only
   summary: Fast and user-friendly estimation of econometric models with multiple fixed-effects. Includes ordinary least squares (OLS), generalized linear models (GLM) and the negative binomial. The core of the package is based on optimized parallel C++ code, scaling especially well for large data sets. The method to obtain
     the fixed-effects coefficients is based on Berge (2018) <https://wwwen.uni.lu/content/download/110162/1299525/file/2018_13>. Further provides tools to export and view the results of several estimations with intuitive design to cluster the standard-errors.
