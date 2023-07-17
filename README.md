@@ -3,22 +3,28 @@ About r-fixest-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fixest-feedstock/blob/main/LICENSE.txt)
 
+
 About r-fixest
 --------------
 
-Home: https://lrberge.github.io/fixest/, https://github.com/lrberge/fixest
+Home: https://lrberge.github.io/fixest/
 
 Package license: GPL-3.0-only
 
 Summary: Fast and user-friendly estimation of econometric models with multiple fixed-effects. Includes ordinary least squares (OLS), generalized linear models (GLM) and the negative binomial. The core of the package is based on optimized parallel C++ code, scaling especially well for large data sets. The method to obtain the fixed-effects coefficients is based on Berge (2018) <https://wwwen.uni.lu/content/download/110162/1299525/file/2018_13>. Further provides tools to export and view the results of several estimations with intuitive design to cluster the standard-errors.
+
+Development: https://github.com/lrberge/fixest
+
 About r-fixest
 --------------
 
-Home: https://lrberge.github.io/fixest/, https://github.com/lrberge/fixest
+Home: https://lrberge.github.io/fixest/
 
 Package license: GPL-3.0-only
 
 Summary: Fast and user-friendly estimation of econometric models with multiple fixed-effects. Includes ordinary least squares (OLS), generalized linear models (GLM) and the negative binomial. The core of the package is based on optimized parallel C++ code, scaling especially well for large data sets. The method to obtain the fixed-effects coefficients is based on Berge (2018) <https://wwwen.uni.lu/content/download/110162/1299525/file/2018_13>. Further provides tools to export and view the results of several estimations with intuitive design to cluster the standard-errors.
+
+Development: https://github.com/lrberge/fixest
 
 Current build status
 ====================
