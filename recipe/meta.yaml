@@ -1,4 +1,4 @@
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fixest_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fixest/fixest_{{ version }}.tar.gz
-  sha256: 6252b3597c8e69ea0af25a338488ddf5e9fd59db7c14e34eae2776217db273df
+  sha256: 7ce71ab9856b17000aae7dd578b1b99a43fee35116500626005056b4d9e713df
 
 build:
   merge_build_host: true  # [win]
@@ -30,7 +30,9 @@ requirements:
     - r-sandwich                   # [build_platform != target_platform]
     - r-stringmagic                # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
