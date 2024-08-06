@@ -1,5 +1,4 @@
 {% set version = "0.12.1" %}
-
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -13,7 +12,7 @@ source:
   sha256: 7ce71ab9856b17000aae7dd578b1b99a43fee35116500626005056b4d9e713df
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -48,6 +47,8 @@ requirements:
     - r-rcpp >=1.0.5
     - r-sandwich
     - r-stringmagic
+    - libgomp                      # [linux]
+    - llvm-openmp                  # [osx]
   run:
     - r-base
     - r-dreamerr >=1.4.0
